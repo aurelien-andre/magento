@@ -1,4 +1,4 @@
-# Symfony LTS
+# Magento LTS
 
 Version 5.4
 
