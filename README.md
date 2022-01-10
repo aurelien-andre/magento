@@ -1,6 +1,6 @@
 # Magento LTS
 
-Version 5.4
+Version 2.4
 
 ## Requirements
 
@@ -17,7 +17,6 @@ Version 5.4
 | OS      | bullseye-slim |
 | Nginx   | 1.18          |
 | PHP     | 7.4           |
-| Magento | 2.4           |
 
 ## Install
 
