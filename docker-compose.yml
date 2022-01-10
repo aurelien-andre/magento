@@ -100,7 +100,7 @@ services:
     image: aurelienandre/magento-composer:latest
     labels:
       - traefik.enable=false
-    command: install --prefer-dist --no-progress --no-interaction --no-scripts
+    command: install --no-progress --no-interaction --no-scripts
     volumes:
       - ./src:/app:rw,delegated
 

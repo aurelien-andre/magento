@@ -16,7 +16,7 @@ Version 5.4
 |---------|---------------|
 | OS      | bullseye-slim |
 | Nginx   | 1.18          |
-| PHP     | 8.0           |
+| PHP     | 7.4           |
 | Magento | 2.4           |
 
 ## Install
@@ -32,7 +32,8 @@ Copy rules
 ```
 127.0.0.1       www.traefik.lan
 127.0.0.1       www.phpmyadmin.lan
-127.0.0.1       www.magento.lan
+127.0.0.1       www.rabbitmq.lan
+127.0.0.1       www.elasticsearch.lan
 127.0.0.1       www.magento.lan
 ```
 
@@ -55,7 +56,7 @@ the "PHP_" prefix is removed and the double underscores are replaced by dots
 The entire configuration overlay is in the docker image
 
 ```shell
-cat /etc/php/8.0/90-php.ini
+cat /etc/php/7.4/90-php.ini
 ```
 
 ## Supervisor
@@ -89,15 +90,13 @@ supervisorctl restart server:*
 ## Composer
 
 ```shell
-docker-composer run --rm composer install
+docker-composer run --rm composer install \
+--prefer-dist \
+--no-progress \
+--no-interaction \
+--no-scripts
 ```
 
 ```shell
 docker-composer run --rm composer require your-package
 ```
-
-
-## Deploy 
-
-
-
