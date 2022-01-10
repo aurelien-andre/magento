@@ -2,6 +2,7 @@ FROM debian:bullseye-slim
 
 ENV \
 MAGE_INSTALL="false" \
+MAGE_COMPILE="false" \
 MAGE_MODE="developer" \
 MAGE_RUN_CODE="base" \
 MAGE_RUN_TYPE="website" \

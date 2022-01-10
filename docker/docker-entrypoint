@@ -30,7 +30,11 @@ if [ "$1" = 'supervisord' ]; then
 
   fi
 
-  bin/magento setup:di:compile
+  if [ "$MAGE_COMPILE" == "yes" ]; then
+
+    bin/magento setup:di:compile
+
+  fi
 
 fi
 
