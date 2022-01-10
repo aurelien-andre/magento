@@ -1,0 +1,61 @@
+#!/bin/bash
+
+if [ "$1" = 'supervisord' ]; then
+
+  if [ ! -s "/etc/php/7.4/90-php.ini" ]; then
+
+    for e in "${!PHP_@}"; do
+
+      VARIABLE=$(echo "$e" | sed -e 's/PHP_/''/g' | sed -e 's/__/'.'/g' | awk '{print tolower($0)}')
+
+      VALUE=$(printf '${%s}' "$e")
+
+      echo "$VARIABLE=$VALUE" >> "/etc/php/7.4/90-php.ini"
+
+    done
+
+  fi
+
+  while [ ! -f "/var/www/html/vendor/autoload.php" ]; do
+
+    (echo >&2 "Waiting for Composer to be ready...")
+
+    sleep 2
+
+  done
+
+  if [ "$MAGE_INSTALL" == "yes" ]; then
+
+    bin/magento setup:upgrade
+
+  fi
+
+  bin/magento setup:di:compile
+
+fi
+
+if [ "$1" = 'supervisorctl' ]; then
+
+  while [ ! -f "/var/pid/supervisord.pid" ]; do
+
+    (echo >&2 "Waiting for Supervisor to be ready...")
+
+    sleep 2
+
+  done
+
+fi
+
+if [ "$1" = 'nginx' ]; then
+
+  while [ ! -f "/var/pid/php7.4-fpm.pid" ]; do
+
+    (echo >&2 "Waiting for Fpm to be ready...")
+
+    sleep 2
+
+  done
+
+fi
+
+exec "$@"

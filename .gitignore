@@ -1,0 +1,10 @@
+/data/elasticsearch/*
+!/data/elasticsearch/.gitignore
+/data/mysql/*
+!/data/mysql/.gitignore
+/data/redis-cache/*
+!/data/redis-cache/.gitignore
+/data/redis-session/*
+!/data/redis-session/.gitignore
+/.idea
+/src/auth.json

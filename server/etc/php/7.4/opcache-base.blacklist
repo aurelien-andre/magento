@@ -1,0 +1,3 @@
+/var/www/html/bin/*
+/var/www/html/app/env/*.php
+/var/www/html/pub/*
