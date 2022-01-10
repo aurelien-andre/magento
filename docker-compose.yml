@@ -98,7 +98,7 @@ services:
 
   composer:
     image: aurelienandre/magento-composer:latest
-    command: install --no-progress --no-interaction --dev --no-scripts
+    command: install --prefer-dist --no-progress --no-interaction
     labels:
       - traefik.enable=false
     volumes:
