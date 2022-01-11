@@ -1,7 +1,7 @@
 <?php
 return [
     'x-frame-options' => 'SAMEORIGIN',
-    'MAGE_MODE' => getenv('MAGE_MODE'),
+    'MAGE_MODE' => 'developer',
     'install' => [
         'date' => 'Mon, 03 Jan 2022 10:12:35 +0000'
     ],
@@ -21,10 +21,10 @@ return [
         'table_prefix' => '',
         'connection' => [
             'default' => [
-                'host' => getenv('MYSQL_HOST'),
-                'dbname' => getenv('MYSQL_DATABASE'),
-                'username' => getenv('MYSQL_USER'),
-                'password' => getenv('MYSQL_PASSWORD'),
+                'host' => 'mysql',
+                'dbname' => 'magento',
+                'username' => 'www-data',
+                'password' => 'www-password',
                 'model' => 'mysql4',
                 'engine' => 'innodb',
                 'initStatements' => 'SET NAMES utf8;',
@@ -43,8 +43,8 @@ return [
     'session' => [
         'save' => 'redis',
         'redis' => [
-            'host' => getenv('REDIS_SESSION_HOST'),
-            'port' => getenv('REDIS_SESSION_PORT'),
+            'host' => 'redis-session',
+            'port' => '6379',
             'password' => '',
             'timeout' => '2.5',
             'persistent_identifier' => '',
@@ -73,8 +73,8 @@ return [
                 'id_prefix' => '69d_',
                 'backend' => 'Magento\\Framework\\Cache\\Backend\\Redis',
                 'backend_options' => [
-                    'host' => getenv('REDIS_CACHE_HOST'),
-                    'port' => getenv('REDIS_CACHE_PORT'),
+                    'host' => 'redis-cache',
+                    'port' => '6379',
                     'database' => '0',
                     'password' => '',
                     'compress_data' => '1',
@@ -112,5 +112,5 @@ return [
         'config_webservice' => 1,
         'translate' => 1,
         'vertex' => 1
-    ],
+    ]
 ];
