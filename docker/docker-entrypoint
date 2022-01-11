@@ -24,17 +24,19 @@ if [ "$1" = 'supervisord' ]; then
 
   done
 
-  if [ "$MAGE_INSTALL" == "yes" ]; then
+  if [ "$MAGE_INSTALL" == "true" ]; then
 
     bin/magento setup:upgrade
 
   fi
 
-  if [ "$MAGE_COMPILE" == "yes" ]; then
+  if [ "$MAGE_COMPILE" == "true" ]; then
 
     bin/magento setup:di:compile
 
   fi
+
+  bin/magento cache:clean
 
 fi
 
