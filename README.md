@@ -73,11 +73,10 @@ supervisorctl help
 ```shell
 supervisorctl
 
-# crontab:crontab-consumers_00     RUNNING   pid 110, uptime 0:00:08
-# crontab:crontab-default_00       RUNNING   pid 73, uptime 0:00:49
-# crontab:crontab-indexer_00       RUNNING   pid 9, uptime 0:01:52
-# server:service-fpm_00            RUNNING   pid 13, uptime 0:01:52
-# server:service-nginx_00          RUNNING   pid 11, uptime 0:01:52
+# crontab:crontab-default_00       RUNNING   pid 57, uptime 0:00:13
+# crontab:crontab-indexer_00       RUNNING   pid 8, uptime 0:03:25
+# server:service-fpm_00            RUNNING   pid 11, uptime 0:03:25
+# server:service-nginx_00          RUNNING   pid 9, uptime 0:03:25
 
 ```
 
@@ -95,5 +94,4 @@ supervisorctl stop crontab:*
 
 # crontab:crontab-indexer_00: stopped
 # crontab:crontab-default_00: stopped
-# crontab:crontab-consumers_00: stopped
 ```
