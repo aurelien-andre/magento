@@ -74,7 +74,7 @@ supervisorctl help
 supervisorctl
 
 # crontab:crontab-default_00       RUNNING   pid 57, uptime 0:00:13
-# crontab:crontab-indexer_00       RUNNING   pid 8, uptime 0:03:25
+# crontab:crontab-index_00       RUNNING   pid 8, uptime 0:03:25
 # server:service-fpm_00            RUNNING   pid 11, uptime 0:03:25
 # server:service-nginx_00          RUNNING   pid 9, uptime 0:03:25
 
@@ -92,6 +92,6 @@ supervisorctl restart server:*
 ```shell
 supervisorctl stop crontab:*
 
-# crontab:crontab-indexer_00: stopped
+# crontab:crontab-index_00: stopped
 # crontab:crontab-default_00: stopped
 ```
