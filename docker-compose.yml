@@ -110,8 +110,8 @@ services:
       - .env
     labels:
       - traefik.enable=true
-      - traefik.http.routers.symfony.rule=Host(`www.magento.lan`)
-      - traefik.http.services.symfony.loadbalancer.server.port=80
+      - traefik.http.routers.magento.rule=Host(`www.magento.lan`)
+      - traefik.http.services.magento.loadbalancer.server.port=80
     links:
       - mysql
       - redis-cache
