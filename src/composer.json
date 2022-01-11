@@ -22,6 +22,7 @@
     "require": {
         "ext-bcmath": "*",
         "ext-apcu": "*",
+        "ext-amqp": "*",
         "ext-xdebug": "*",
         "ext-curl": "*",
         "ext-soap": "*",

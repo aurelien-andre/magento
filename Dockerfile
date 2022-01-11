@@ -89,6 +89,7 @@ php7.4-common \
 php7.4-bcmath \
 php7.4-opcache \
 php7.4-apcu \
+php7.4-amqp \
 php7.4-xdebug \
 php7.4-curl \
 php7.4-soap \
