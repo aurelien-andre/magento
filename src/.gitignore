@@ -5,6 +5,7 @@
 /.settings
 /.vscode
 atlassian*
+/core
 /nbproject
 /robots.txt
 /pub/robots.txt
