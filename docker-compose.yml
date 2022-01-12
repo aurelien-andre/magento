@@ -129,4 +129,4 @@ services:
       - mailhog
     volumes:
       - ./src:/var/www/html:rw,delegated
-      - ./data/media:/var/www/pub/media:rw,delegated
+      - ./data/media:/var/www/html/pub/media:rw,delegated

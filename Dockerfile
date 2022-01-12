@@ -14,6 +14,7 @@ MYSQL_DATABASE="magento" \
 PHP_MEMORY_LIMIT="4G" \
 PHP_REALPATH_CACHE_SIZE="4096K" \
 PHP_REALPATH_CACHE_TTL="600" \
+PHP_SENDMAIL_PATH="" \
 PHP_XDEBUG_MODE="off" \
 PHP_OPCACHE__ENABLE="1" \
 PHP_OPCACHE__ENABLE_CLI="1" \
@@ -172,6 +173,10 @@ rm -f /var/www/html/*;
 COPY --chown=rootless:rootless src /var/www/html
 
 COPY --chown=rootless:rootless docker/* /usr/bin
+
+RUN set -eux; \
+wget -q https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64; \
+mv mhsendmail_linux_amd64 /usr/bin/mhsendmail
 
 RUN set -eux; \
 chmod +x -R /usr/bin; \
