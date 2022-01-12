@@ -3,8 +3,8 @@ FROM debian:bullseye-slim
 ENV \
 USER_SERVER="true" \
 USER_CRONTAB="true" \
-MAGE_INSTALL="false" \
-MAGE_COMPILE="false" \
+MAGE_INSTALL="true" \
+MAGE_COMPILE="true" \
 MAGE_MODE="developer" \
 MAGE_RUN_CODE="base" \
 MAGE_RUN_TYPE="website" \
