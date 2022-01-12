@@ -75,18 +75,18 @@ supervisorctl
 
 # crontab:crontab-default_00       RUNNING   pid 57, uptime 0:00:13
 # crontab:crontab-index_00       RUNNING   pid 8, uptime 0:03:25
-# server:service-fpm_00            RUNNING   pid 11, uptime 0:03:25
-# server:service-nginx_00          RUNNING   pid 9, uptime 0:03:25
+# server:server-fpm_00            RUNNING   pid 11, uptime 0:03:25
+# server:server-nginx_00          RUNNING   pid 9, uptime 0:03:25
 
 ```
 
 ```shell
 supervisorctl restart server:*
 
-# server:service-nginx_00: stopped
-# server:service-fpm_00: stopped
-# server:service-nginx_00: started
-# server:service-fpm_00: started
+# server:server-nginx_00: stopped
+# server:server-fpm_00: stopped
+# server:server-nginx_00: started
+# server:server-fpm_00: started
 ```
 
 ```shell

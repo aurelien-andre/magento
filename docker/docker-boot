@@ -1,0 +1,65 @@
+#!/bin/bash
+
+set -e
+
+if [ "$USER_SERVER" = 'true' ]; then
+
+  supervisorctl start server:*
+
+fi
+
+if [ "$USER_CRONTAB" = 'true' ]; then
+
+  supervisorctl start crontab:*
+
+fi
+
+SERVER_PROCESSES="
+server:server-fpm_00
+server:server-nginx_00
+"
+
+CRONTAB_PROCESSES="
+crontab:crontab-default_00
+crontab:crontab-index_00
+"
+
+RUNNING=1
+
+while((RUNNING==1)); do
+
+  if [ "$USER_SERVER" = 'true' ]; then
+
+      for PROCESS in $SERVER_PROCESSES; do
+
+        PID=$(supervisorctl pid $PROCESS)
+
+        if [ "$PID" = '0' ]; then
+
+          RUNNING=0
+
+        fi
+
+      done
+
+  fi
+
+  if [ "$USER_CRONTAB" = 'true' ]; then
+
+      for PROCESS in $CRONTAB_PROCESSES; do
+
+        PID=$(supervisorctl pid $PROCESS)
+
+        if [ "$PID" = '0' ]; then
+
+          RUNNING=0
+
+        fi
+
+      done
+
+  fi
+
+  sleep 2
+
+done

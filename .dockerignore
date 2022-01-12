@@ -1,6 +1,7 @@
 /data
 /src/var
 /src/generated
+/src/vendor
 /.git
 /.gitignore
 /.idea

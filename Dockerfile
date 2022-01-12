@@ -1,6 +1,8 @@
 FROM debian:bullseye-slim
 
 ENV \
+USER_SERVER="true" \
+USER_CRONTAB="true" \
 MAGE_INSTALL="false" \
 MAGE_COMPILE="false" \
 MAGE_MODE="developer" \
@@ -172,7 +174,7 @@ rm -f /var/www/html/*;
 
 COPY --chown=rootless:rootless src /var/www/html
 
-COPY --chown=rootless:rootless docker/* /usr/bin
+COPY --chown=rootless:rootless docker/ /usr/bin
 
 RUN set -eux; \
 wget -q https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64; \
