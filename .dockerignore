@@ -8,6 +8,7 @@
 /.idea
 /.env
 /.env.*
+/auth.json.dist
 /docker-compose.yml
 /Dockerfile
 /README.md
