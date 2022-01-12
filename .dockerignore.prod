@@ -1,10 +1,8 @@
 /data
 /src/var
 /src/generated
-/src/vendor
 /.git
 /.gitignore
-/.dockerignore.prod
 /.idea
 /.env
 /.env.*
