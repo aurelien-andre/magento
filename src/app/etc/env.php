@@ -70,7 +70,7 @@ return [
     'cache' => [
         'frontend' => [
             'default' => [
-                'id_prefix' => '68d_',
+                'id_prefix' => '69d_',
                 'backend' => 'Magento\\Framework\\Cache\\Backend\\Redis',
                 'backend_options' => [
                     'host' => 'redis-cache',
@@ -78,7 +78,13 @@ return [
                     'database' => '0',
                     'password' => '',
                     'compress_data' => '1',
-                    'compression_lib' => ''
+                    'compression_lib' => '',
+                    'preload_keys' => [
+                        '69d_EAV_ENTITY_TYPES',
+                        '69d_GLOBAL_PLUGIN_LIST',
+                        '69d_DB_IS_UP_TO_DATE',
+                        '69d_SYSTEM_DEFAULT'
+                    ]
                 ]
             ],
             'page_cache' => [

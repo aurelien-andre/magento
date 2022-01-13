@@ -94,6 +94,7 @@ php7.4-opcache \
 php7.4-apcu \
 php7.4-amqp \
 php7.4-xdebug \
+php7.4-redis \
 php7.4-curl \
 php7.4-soap \
 php7.4-mbstring \
