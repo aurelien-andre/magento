@@ -82,7 +82,15 @@ return [
                 ]
             ],
             'page_cache' => [
-                'id_prefix' => '69d_'
+                'backend' => 'Magento\\Framework\\Cache\\Backend\\Redis',
+                'backend_options' => [
+                    'server' => 'redis-cache',
+                    'port' => '6379',
+                    'database' => '1',
+                    'password' => '',
+                    'compress_data' => '1',
+                    'compression_lib' => ''
+                ]
             ]
         ],
         'allow_parallel_generation' => false
