@@ -23,8 +23,8 @@ return [
             'default' => [
                 'host' => 'mysql',
                 'dbname' => 'magento',
-                'username' => 'www-data',
-                'password' => 'www-password',
+                'username' => 'rootless',
+                'password' => 'nopassword',
                 'model' => 'mysql4',
                 'engine' => 'innodb',
                 'initStatements' => 'SET NAMES utf8;',
