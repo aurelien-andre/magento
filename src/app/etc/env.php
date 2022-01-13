@@ -70,7 +70,6 @@ return [
     'cache' => [
         'frontend' => [
             'default' => [
-                'id_prefix' => '69d_',
                 'backend' => 'Magento\\Framework\\Cache\\Backend\\Redis',
                 'backend_options' => [
                     'host' => 'redis-cache',
@@ -80,22 +79,21 @@ return [
                     'compress_data' => '1',
                     'compression_lib' => '',
                     'preload_keys' => [
-                        '69d_EAV_ENTITY_TYPES',
-                        '69d_GLOBAL_PLUGIN_LIST',
-                        '69d_DB_IS_UP_TO_DATE',
-                        '69d_SYSTEM_DEFAULT'
+                        'EAV_ENTITY_TYPES',
+                        'GLOBAL_PLUGIN_LIST',
+                        'DB_IS_UP_TO_DATE',
+                        'SYSTEM_DEFAULT'
                     ]
                 ]
             ],
             'page_cache' => [
-                'id_prefix' => '69d_',
                 'backend' => 'Magento\\Framework\\Cache\\Backend\\Redis',
                 'backend_options' => [
                     'server' => 'redis-cache',
                     'port' => '6379',
                     'database' => '1',
                     'password' => '',
-                    'compress_data' => '1',
+                    'compress_data' => '0',
                     'compression_lib' => ''
                 ]
             ]
