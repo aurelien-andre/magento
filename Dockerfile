@@ -3,6 +3,8 @@ FROM debian:bullseye-slim
 ENV \
 USER_SERVER="true" \
 USER_CRONTAB="true" \
+CRONTAB_DEFAULT_SLEEP="60" \
+CRONTAB_INDEX_SLEEP="600" \
 MAGE_INSTALL="true" \
 MAGE_COMPILE="true" \
 MAGE_MODE="developer" \
