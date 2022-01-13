@@ -2,13 +2,13 @@
 
 set -e
 
-if [ "$USER_SERVER" = 'true' ]; then
+if [ "$USE_SERVER" = 'true' ]; then
 
   supervisorctl start server:*
 
 fi
 
-if [ "$USER_CRONTAB" = 'true' ]; then
+if [ "$USE_CRONTAB" = 'true' ]; then
 
   supervisorctl start crontab:*
 
@@ -28,7 +28,7 @@ RUNNING=1
 
 while((RUNNING==1)); do
 
-  if [ "$USER_SERVER" = 'true' ]; then
+  if [ "$USE_SERVER" = 'true' ]; then
 
       for PROCESS in $SERVER_PROCESSES; do
 
@@ -44,7 +44,7 @@ while((RUNNING==1)); do
 
   fi
 
-  if [ "$USER_CRONTAB" = 'true' ]; then
+  if [ "$USE_CRONTAB" = 'true' ]; then
 
       for PROCESS in $CRONTAB_PROCESSES; do
 

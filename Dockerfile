@@ -1,8 +1,8 @@
 FROM debian:bullseye-slim
 
 ENV \
-USER_SERVER="true" \
-USER_CRONTAB="true" \
+USE_SERVER="true" \
+USE_CRONTAB="true" \
 CRONTAB_DEFAULT_SLEEP="60" \
 CRONTAB_INDEX_SLEEP="600" \
 MAGE_INSTALL="true" \
