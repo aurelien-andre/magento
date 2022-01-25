@@ -1,7 +1,7 @@
 <?php
 return [
     'x-frame-options' => 'SAMEORIGIN',
-    'MAGE_MODE' => 'developer',
+    'MAGE_MODE' => getenv('MAGE_MODE'),
     'install' => [
         'date' => 'Mon, 03 Jan 2022 10:12:35 +0000'
     ],
@@ -21,10 +21,10 @@ return [
         'table_prefix' => '',
         'connection' => [
             'default' => [
-                'host' => 'mysql',
-                'dbname' => 'magento',
-                'username' => 'rootless',
-                'password' => 'nopassword',
+                'host' => getenv('MYSQL_HOST'),
+                'dbname' => getenv('MYSQL_DATABASE'),
+                'username' => getenv('MYSQL_USER'),
+                'password' => getenv('MYSQL_PASSWORD'),
                 'model' => 'mysql4',
                 'engine' => 'innodb',
                 'initStatements' => 'SET NAMES utf8;',
@@ -43,8 +43,8 @@ return [
     'session' => [
         'save' => 'redis',
         'redis' => [
-            'host' => 'redis-session',
-            'port' => '6379',
+            'host' => getenv('REDIS_SESSION_HOST'),
+            'port' => getenv('REDIS_SESSION_PORT'),
             'password' => '',
             'timeout' => '2.5',
             'persistent_identifier' => '',
@@ -72,8 +72,8 @@ return [
             'default' => [
                 'backend' => 'Magento\\Framework\\Cache\\Backend\\Redis',
                 'backend_options' => [
-                    'host' => 'redis-cache',
-                    'port' => '6379',
+                    'server' => getenv('REDIS_SESSION_HOST'),
+                    'port' => getenv('REDIS_SESSION_PORT'),
                     'database' => '0',
                     'password' => '',
                     'compress_data' => '1',
@@ -89,8 +89,8 @@ return [
             'page_cache' => [
                 'backend' => 'Magento\\Framework\\Cache\\Backend\\Redis',
                 'backend_options' => [
-                    'server' => 'redis-cache',
-                    'port' => '6379',
+                    'server' => getenv('REDIS_SESSION_HOST'),
+                    'port' => getenv('REDIS_SESSION_PORT'),
                     'database' => '1',
                     'password' => '',
                     'compress_data' => '0',

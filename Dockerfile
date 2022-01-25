@@ -7,6 +7,7 @@ CRONTAB_DEFAULT_SLEEP="60" \
 CRONTAB_INDEX_SLEEP="600" \
 MAGE_INSTALL="true" \
 MAGE_COMPILE="true" \
+MAGE_CLEAN_CACHE="true" \
 MAGE_MODE="developer" \
 MAGE_RUN_CODE="base" \
 MAGE_RUN_TYPE="website" \
@@ -19,12 +20,15 @@ PHP_MEMORY_LIMIT="4G" \
 PHP_REALPATH_CACHE_SIZE="4096K" \
 PHP_REALPATH_CACHE_TTL="600" \
 PHP_SENDMAIL_PATH="" \
-PHP_XDEBUG_MODE="off" \
+PHP_XDEBUG__MODE="off" \
+PHP_XDEBUG__CLIENT_PORT="9003" \
+PHP_XDEBUG__CLIENT_HOST="172.17.0.1" \
+PHP_XDEBUG__IDEKEY="PHPSTORM" \
 PHP_OPCACHE__ENABLE="1" \
 PHP_OPCACHE__ENABLE_CLI="1" \
 PHP_OPCACHE__MEMORY_CONSUMPTION="256" \
 PHP_OPCACHE__INTERNED_STRINGS_BUFFER="8" \
-PHP_OPCACHE__MAX_ACCELERATED_FILES="20000" \
+PHP_OPCACHE__MAX_ACCELERATED_FILES="60000" \
 PHP_OPCACHE__MAX_WASTED_PERCENTAGE="5" \
 PHP_OPCACHE__USE_CWD="1" \
 PHP_OPCACHE__VALIDATE_TIMESTAMPS="0" \
@@ -74,10 +78,10 @@ unzip
 
 RUN set -eux; \
 adduser -h /home/rootless -g 'rootless' -D -u 1000 rootless; \
-echo 'rootless:65533:65534' >> /etc/subuid; \
-echo 'rootless:65533:65534' >> /etc/subgid; \
-echo 'rootless:rootless:65533:65534:/root:/bin' >> /etc/passwd; \
-echo 'rootless::65533:rootless' >> /etc/group
+echo 'rootless:1000:1000' >> /etc/subuid; \
+echo 'rootless:1000:1000' >> /etc/subgid; \
+echo 'rootless:rootless:1000:1000:/root:/bin' >> /etc/passwd; \
+echo 'rootless::1000:rootless' >> /etc/group
 
 RUN apt-get update \
 &&  wget -q https://packages.sury.org/php/apt.gpg -O- | apt-key add - \
@@ -195,7 +199,6 @@ ENTRYPOINT ["docker-entrypoint"]
 STOPSIGNAL SIGQUIT
 
 EXPOSE 80
-EXPOSE 9000
 
 CMD ["supervisord"]
 

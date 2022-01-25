@@ -18,6 +18,16 @@ if [ "$1" = 'supervisord' ]; then
 
   fi
 
+  rm -f "/var/www/html/app/etc/env.php"
+
+  if [ ! -f "/var/www/html/app/etc/env.php" ]; then
+
+    cp \
+      "/var/www/html/app/etc/env.template.php" \
+      "/var/www/html/app/etc/env.php"
+
+  fi
+
   while [ ! -f "/var/www/html/vendor/autoload.php" ]; do
 
     (echo >&2 "Waiting for Composer to be ready...")
@@ -38,7 +48,11 @@ if [ "$1" = 'supervisord' ]; then
 
   fi
 
-  bin/magento cache:clean
+  if [ "$MAGE_CLEAN_CACHE" == "true" ]; then
+
+    bin/magento cache:clean
+
+  fi
 
 fi
 

@@ -35,17 +35,16 @@ set_include_path(get_include_path() . PATH_SEPARATOR . realpath(__DIR__));
 
 preload(
     [
-        __DIR__ . '/../generated/metadata',
-        __DIR__ . '/../vendor/autoload.php',
-        __DIR__ . '/../vendor/composer/include_paths.php',
-        __DIR__ . '/../vendor/composer/autoload_static.php',
-        __DIR__ . '/../vendor/composer/autoload_real.php',
-        __DIR__ . '/../vendor/composer/autoload_psr4.php',
-        __DIR__ . '/../vendor/composer/autoload_namespaces.php',
-        __DIR__ . '/../vendor/composer/autoload_files.php',
-        __DIR__ . '/../vendor/composer/autoload_classmap.php',
+        dirname(__DIR__) . '/generated/metadata',
+        dirname(__DIR__) . '/vendor/autoload.php',
+        dirname(__DIR__) . '/vendor/composer/include_paths.php',
+        dirname(__DIR__) . '/vendor/composer/autoload_static.php',
+        dirname(__DIR__) . '/vendor/composer/autoload_real.php',
+        dirname(__DIR__) . '/vendor/composer/autoload_psr4.php',
+        dirname(__DIR__) . '/vendor/composer/autoload_namespaces.php',
+        dirname(__DIR__) . '/vendor/composer/autoload_files.php',
+        dirname(__DIR__) . '/vendor/composer/autoload_classmap.php',
         __DIR__ . '/etc/config.php',
-        __DIR__ . '/etc/env.php',
     ],
     []
 );
