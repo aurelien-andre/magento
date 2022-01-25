@@ -45,6 +45,7 @@ preload(
         dirname(__DIR__) . '/vendor/composer/autoload_files.php',
         dirname(__DIR__) . '/vendor/composer/autoload_classmap.php',
         __DIR__ . '/etc/config.php',
+        __DIR__ . '/etc/env.php',
     ],
     []
 );
