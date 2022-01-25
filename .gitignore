@@ -8,3 +8,5 @@
 !/data/redis-session/.gitignore
 /.idea
 /src/auth.json
+/docker/*
+!/docker/docker-*
