@@ -189,8 +189,6 @@ COPY --chown=rootless:rootless src /var/www/html
 
 COPY --chown=rootless:rootless docker/ /usr/bin
 
-COPY --chown=rootless:rootless deploy /deploy
-
 RUN set -eux; \
 chmod 777 -R /usr/bin; \
 chmod +x -R /usr/bin; \

@@ -30,9 +30,17 @@ if [ "$1" = 'supervisord' ]; then
 
   while [ ! -f "/var/www/html/vendor/autoload.php" ]; do
 
-    (echo >&2 "Waiting for Composer to be ready...")
+    if [ "$MAGE_MODE" = 'production' ]; then
 
-    sleep 2
+      (echo >&2 "Waiting for Composer to be ready...")
+
+      sleep 2
+
+    else
+
+      bin-composer install --prefer-dist --no-progress --no-interaction
+
+    fi
 
   done
 
@@ -58,7 +66,7 @@ if [ "$1" = 'supervisord' ]; then
 
   fi
 
-  if [ "$MAGE_CLEAN_CACHE" == "true" ]; then
+  if [ "$MAGE_CACHE_CLEAN" == "true" ]; then
 
     bin/magento cache:clean
 

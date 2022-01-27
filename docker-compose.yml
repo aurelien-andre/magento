@@ -122,4 +122,4 @@ services:
     volumes:
       - ./src:/var/www/html:rw,delegated
       - ./data/media:/var/www/html/pub/media:rw,delegated
-      - ./deploy:/deploy:rw,delegated
+
