@@ -36,13 +36,6 @@ Copy rules
 127.0.0.1       www.magento.lan
 ```
 
-MailHog
-
-```shell
-wget -q https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64; \
-mv mhsendmail_linux_amd64 docker/bin-mhsendmail
-```
-
 Composer
 
 ```shell
@@ -55,6 +48,13 @@ Phing
 ```shell
 wget -q https://www.phing.info/get/phing-latest.phar; \
 mv phing-latest.phar docker/bin-phing
+```
+
+MailHog
+
+```shell
+wget -q https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64; \
+mv mhsendmail_linux_amd64 docker/bin-mhsendmail
 ```
 
 ## PHP
