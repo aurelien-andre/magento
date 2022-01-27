@@ -4,9 +4,9 @@
     <property file="/deploy/build.properties"/>
     <import file="/deploy/import/build-composer.xml"/>
     <import file="/deploy/import/build-magento.xml"/>
-    <import file="/deploy/import/build-test.xml"/>
+    <import file="/deploy/import/build-phpunit.xml"/>
     <target name="build-compile"
-            depends="composer-install, test-all"
+            depends="composer-install, test-phpunit"
             description="Build compile"/>
     <target name="build-optimized"
             depends="composer-install-optimized"

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Composer" basedir="/var/www/html">
+<project name="Composer" default="composer-install" basedir="/var/www/html">
+    <property file="/deploy/build.properties"/>
     <property name="bin.composer" value="bin-composer"/>
     <target name="validate-composer-version" description="Ensure composer version">
         <exec command="${bin.composer} -V" passthru="true" checkreturn="true"/>
@@ -30,7 +31,7 @@
         <if>
             <equals arg1="${output.IS_FILE_NOT_EXISTS}" arg2="true"/>
             <then>
-                <copy file="${base_dir}/auth-template.json" tofile="${base_dir}/auth.json" overwrite="true">
+                <copy file="${basedir}/auth-template.json" tofile="${basedir}/auth.json" overwrite="true">
                     <filterchain>
                         <replacetokens begintoken="%%" endtoken="%%">
                             <token key="magento2.repository-key" value="${magento2.repository-key}"/>

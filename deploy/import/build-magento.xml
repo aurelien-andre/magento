@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Magento" basedir="/var/www/html">
-    <property name="bin.magento" value="${base_dir}/bin/magento"/>
+<project name="Magento" default="magento-initialize" basedir="/var/www/html">
+    <property file="/deploy/build.properties"/>
+    <property name="bin.magento" value="/var/www/html/bin/magento"/>
     <target name="validate-magento-properties" description="Ensure magento properties are defined">
         <if>
             <not>

@@ -4,6 +4,6 @@
     <property file="/deploy/build.properties"/>
     <import file="/deploy/import/build-composer.xml"/>
     <import file="/deploy/import/build-magento.xml"/>
-    <import file="/deploy/import/build-test.xml"/>
-    <target name="build" depends="composer-install, magento-initialize, test-all" description="Build package local"/>
+    <import file="/deploy/import/build-phpunit.xml"/>
+    <target name="build" depends="composer-install, magento-initialize, test-phpunit" description="Build package local"/>
 </project>
