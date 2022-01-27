@@ -2,16 +2,104 @@
 <project name="QA" default="build" basedir="/var/www/html">
     <property name="base_dir" value="${project.basedir}"/>
     <property file="/deploy/build.properties"/>
-    <import file="/deploy/import/build-composer.xml"/>
-    <import file="/deploy/import/build-magento.xml"/>
-    <import file="/deploy/import/build-phpunit.xml"/>
-    <target name="build-compile"
-            depends="composer-install, test-phpunit"
-            description="Build compile"/>
-    <target name="build-optimized"
-            depends="composer-install-optimized"
-            description="Build optimized"/>
+    <property name="bin.composer" value="bin-composer"/>
+    <property name="bin.phpunit" value="phpunit"/>
+    <property name="bin.magento" value="${base_dir}/bin/magento"/>
+    <target name="validate-composer-version" description="Ensure composer version">
+        <exec command="${bin.composer} -V" passthru="true" checkreturn="true"/>
+    </target>
+    <target name="validate-composer-properties" description="Ensure all require properties are defined">
+        <if>
+            <not>
+                <isset property="magento2.repository-key"/>
+            </not>
+            <then>
+                <fail>magento.repository-key is not specified</fail>
+            </then>
+        </if>
+        <if>
+            <not>
+                <isset property="magento2.repository-secret"/>
+            </not>
+            <then>
+                <fail>magento.repository-secret is not specified</fail>
+            </then>
+        </if>
+        <echo message="Done"/>
+    </target>
+    <target name="validate-composer-auth" description="Ensure auth.json exists">
+        <property name="output.IS_FILE_EXISTS" value="false"/>
+        <exec command="if [ ! -f '/var/www/html/auth.json' ]; then echo 'true'; else echo 'false'; fi;"
+              outputProperty="output.IS_FILE_NOT_EXISTS"/>
+        <if>
+            <equals arg1="${output.IS_FILE_NOT_EXISTS}" arg2="true"/>
+            <then>
+                <copy file="${base_dir}/auth-template.json" tofile="${base_dir}/auth.json" overwrite="true">
+                    <filterchain>
+                        <replacetokens begintoken="%%" endtoken="%%">
+                            <token key="magento2.repository-key" value="${magento2.repository-key}"/>
+                            <token key="magento2.repository-secret" value="${magento2.repository-secret}"/>
+                        </replacetokens>
+                    </filterchain>
+                </copy>
+            </then>
+            <else>
+                <echo message="Done"/>
+            </else>
+        </if>
+    </target>
+    <target name="validate-composer"
+            depends="validate-composer-properties, validate-composer-version, validate-composer-auth"
+            description="Ensure composer requirements">
+        <echo message="Done"/>
+    </target>
+    <target name="composer-install"
+            depends="validate-composer"
+            description="Install Composer">
+        <exec command="${bin.composer} install --prefer-dist --no-progress --no-interaction"
+              passthru="true"
+              checkreturn="true"/>
+    </target>
+    <target name="composer-dump"
+            depends="validate-composer"
+            description="Dump Composer">
+        <exec command="${bin.composer} dump-autoload"
+              passthru="true"
+              checkreturn="true"/>
+    </target>
+    <target name="composer-install-optimized"
+            depends="validate-composer"
+            description="Install Composer">
+        <exec command="${bin.composer} install --prefer-dist --no-progress --no-interaction --no-dev --optimize-autoloader"
+              passthru="true"
+              checkreturn="true"/>
+    </target>
+    <target name="magento-setup-di-compile"
+            description="magento setup di compile">
+        <exec command="${bin.magento} setup:di:compile"
+              passthru="true"
+              checkreturn="true"/>
+    </target>
+    <target name="validate-phpunit-properties" description="Ensure phpunit properties">
+        <if>
+            <not>
+                <isset property="phpunit.filename"/>
+            </not>
+            <then>
+                <fail>phpunit.filename is not specified</fail>
+            </then>
+        </if>
+        <echo message="Done"/>
+    </target>
+    <target name="validate-phpunit-version" description="Ensure phpunit version">
+        <exec command="${bin.phpunit} --version" passthru="true" checkreturn="true"/>
+    </target>
+    <target name="test-phpunit"
+            depends="validate-phpunit-properties, validate-phpunit-version"
+            description="Test phpunit">
+        <exec command="${bin.phpunit} -c ${phpunit.filename}" passthru="true" checkreturn="true"/>
+    </target>
     <target name="build"
-            depends="build-compile, build-optimized"
+            depends="composer-install, composer-dump, magento-setup-di-compile, test-phpunit, composer-install-optimized"
             description="Build package local"/>
 </project>
