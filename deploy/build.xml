@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="QA" default="build" basedir="/var/www/html">
+    <property file="/deploy/build.properties"/>
+    <property name="base_dir" value="${project.basedir}"/>
+    <import file="/deploy/build-composer.xml"/>
+    <target name="build" depends="composer-install-optimized" description="Build package"/>
+</project>

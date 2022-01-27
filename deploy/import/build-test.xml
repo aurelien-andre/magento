@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Test" basedir="/var/www/html">
+    <property name="bin.phpunit" value="phpunit"/>
+    <target name="validate-phpunit-properties" description="Ensure phpunit version">
+        <if>
+            <not>
+                <isset property="phpunit.filename"/>
+            </not>
+            <then>
+                <fail>phpunit.filename is not specified</fail>
+            </then>
+        </if>
+        <echo message="Done" />
+    </target>
+    <target name="validate-phpunit-version" description="Ensure phpunit version">
+        <exec command="${bin.phpunit} --version" passthru="true" checkreturn="true"/>
+    </target>
+    <target name="test-phpunit"
+            depends="validate-phpunit-properties, validate-phpunit-version"
+            description="Test PHPUnit">
+        <exec command="${bin.phpunit} -c ${phpunit.filename}" passthru="true" checkreturn="true"/>
+    </target>
+    <target name="test-all"
+            depends="test-phpunit"
+            description="Test all">
+        <echo message="Done" />
+    </target>
+</project>

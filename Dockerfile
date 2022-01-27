@@ -1,13 +1,16 @@
 FROM debian:bullseye-slim
 
 ENV \
+COMPOSER_ALLOW_SUPERUSER='0' \
+COMPOSER_ALLOW_XDEBUG='0' \
+COMPOSER_CACHE_DIR='/var/cache/composer' \
 USE_SERVER="true" \
 USE_CRONTAB="true" \
 CRONTAB_DEFAULT_SLEEP="60" \
 CRONTAB_INDEX_SLEEP="600" \
-MAGE_INSTALL="true" \
-MAGE_COMPILE="true" \
-MAGE_CLEAN_CACHE="true" \
+MAGE_INSTALL="false" \
+MAGE_COMPILE="false" \
+MAGE_CLEAN_CACHE="false" \
 MAGE_MODE="developer" \
 MAGE_RUN_CODE="base" \
 MAGE_RUN_TYPE="website" \
@@ -138,6 +141,9 @@ chown rootless:rootless /etc/supervisor; \
 mkdir -p /etc/php; \
 chmod 777 -R /etc/php; \
 chown rootless:rootless /etc/php; \
+mkdir -p /deploy; \
+chmod 777 -R /deploy; \
+chown rootless:rootless /deploy; \
 mkdir -p /etc/nginx; \
 chmod 777 -R /etc/nginx; \
 chown rootless:rootless /etc/nginx; \
@@ -183,12 +189,12 @@ COPY --chown=rootless:rootless src /var/www/html
 
 COPY --chown=rootless:rootless docker/ /usr/bin
 
-RUN set -eux; \
-wget -q https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64; \
-mv mhsendmail_linux_amd64 /usr/bin/mhsendmail
+COPY --chown=rootless:rootless deploy /deploy
 
 RUN set -eux; \
+chmod 777 -R /usr/bin; \
 chmod +x -R /usr/bin; \
+chmod 777 -R /usr/sbin; \
 chmod +x -R /usr/sbin; \
 chmod +x -R /var/www/html/bin
 

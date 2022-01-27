@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "42594bedb0ff53ffef51356deb94e11d",
+    "content-hash": "68eff07ab298a18b7011ea91b3b4aacc",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -334,16 +334,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.209.1",
+            "version": "3.209.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "3a418a7a9beae4675685efe7bb426ee0ae338a40"
+                "reference": "4de9a457bd099872ec713cdde414e06003e6d1f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3a418a7a9beae4675685efe7bb426ee0ae338a40",
-                "reference": "3a418a7a9beae4675685efe7bb426ee0ae338a40",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/4de9a457bd099872ec713cdde414e06003e6d1f3",
+                "reference": "4de9a457bd099872ec713cdde414e06003e6d1f3",
                 "shasum": ""
             },
             "require": {
@@ -419,9 +419,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.209.1"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.209.13"
             },
-            "time": "2022-01-07T19:12:55+00:00"
+            "time": "2022-01-26T19:15:02+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -996,16 +996,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "1.10.24",
+            "version": "1.10.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "6dea608377dc5409895d4cfd987947bc0abe154a"
+                "reference": "892838f84440b4851ec7e57221d52cb65a8991a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/6dea608377dc5409895d4cfd987947bc0abe154a",
-                "reference": "6dea608377dc5409895d4cfd987947bc0abe154a",
+                "url": "https://api.github.com/repos/composer/composer/zipball/892838f84440b4851ec7e57221d52cb65a8991a5",
+                "reference": "892838f84440b4851ec7e57221d52cb65a8991a5",
                 "shasum": ""
             },
             "require": {
@@ -1075,7 +1075,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/1.10.24"
+                "source": "https://github.com/composer/composer/tree/1.10.25"
             },
             "funding": [
                 {
@@ -1091,7 +1091,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-09T19:06:33+00:00"
+            "time": "2022-01-21T09:02:15+00:00"
         },
         {
             "name": "composer/semver",
@@ -4572,16 +4572,16 @@
         },
         {
             "name": "laminas/laminas-stdlib",
-            "version": "3.7.0",
+            "version": "3.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-stdlib.git",
-                "reference": "cba75fad2053bb5dc8d3e7f5e62b61d75eecfaf1"
+                "reference": "bcd869e2fe88d567800057c1434f2380354fe325"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-stdlib/zipball/cba75fad2053bb5dc8d3e7f5e62b61d75eecfaf1",
-                "reference": "cba75fad2053bb5dc8d3e7f5e62b61d75eecfaf1",
+                "url": "https://api.github.com/repos/laminas/laminas-stdlib/zipball/bcd869e2fe88d567800057c1434f2380354fe325",
+                "reference": "bcd869e2fe88d567800057c1434f2380354fe325",
                 "shasum": ""
             },
             "require": {
@@ -4627,7 +4627,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2022-01-10T11:18:55+00:00"
+            "time": "2022-01-21T15:50:46+00:00"
         },
         {
             "name": "laminas/laminas-text",
@@ -4748,16 +4748,16 @@
         },
         {
             "name": "laminas/laminas-validator",
-            "version": "2.15.1",
+            "version": "2.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-validator.git",
-                "reference": "fbd87f30c0a27aaeeee8adb2f934c14fb6046c80"
+                "reference": "329900ab7674c198e91e85b2e09080cdf493ce07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-validator/zipball/fbd87f30c0a27aaeeee8adb2f934c14fb6046c80",
-                "reference": "fbd87f30c0a27aaeeee8adb2f934c14fb6046c80",
+                "url": "https://api.github.com/repos/laminas/laminas-validator/zipball/329900ab7674c198e91e85b2e09080cdf493ce07",
+                "reference": "329900ab7674c198e91e85b2e09080cdf493ce07",
                 "shasum": ""
             },
             "require": {
@@ -4834,7 +4834,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2021-12-02T14:23:06+00:00"
+            "time": "2022-01-21T14:30:01+00:00"
         },
         {
             "name": "laminas/laminas-view",
@@ -5835,16 +5835,16 @@
         },
         {
             "name": "magento/magento-composer-installer",
-            "version": "0.2.1",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/magento/magento-composer-installer.git",
-                "reference": "b9f929f718ef93ed61b6410bad85d40c37fd5ed3"
+                "reference": "0c1987b1ba4c8bacde15cad86f4dace1e3957104"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/magento/magento-composer-installer/zipball/b9f929f718ef93ed61b6410bad85d40c37fd5ed3",
-                "reference": "b9f929f718ef93ed61b6410bad85d40c37fd5ed3",
+                "url": "https://api.github.com/repos/magento/magento-composer-installer/zipball/0c1987b1ba4c8bacde15cad86f4dace1e3957104",
+                "reference": "0c1987b1ba4c8bacde15cad86f4dace1e3957104",
                 "shasum": ""
             },
             "require": {
@@ -5855,12 +5855,10 @@
                 "magento-hackathon/magento-composer-installer": "*"
             },
             "require-dev": {
-                "firegento/phpcs": "~1.1.0",
                 "mikey179/vfsstream": "*",
-                "phpunit/phpunit": "*",
-                "phpunit/phpunit-mock-objects": "dev-master",
-                "squizlabs/php_codesniffer": "1.4.7",
-                "symfony/process": "*"
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "~3.6.1",
+                "symfony/process": "~5.4.0"
             },
             "type": "composer-plugin",
             "extra": {
@@ -5911,9 +5909,9 @@
                 "magento"
             ],
             "support": {
-                "source": "https://github.com/magento/magento-composer-installer/tree/0.2.1"
+                "source": "https://github.com/magento/magento-composer-installer/tree/0.3.0"
             },
-            "time": "2021-03-04T20:05:10+00:00"
+            "time": "2021-12-17T20:04:15+00:00"
         },
         {
             "name": "magento/magento2-base",
@@ -17760,16 +17758,16 @@
         },
         {
             "name": "paragonie/constant_time_encoding",
-            "version": "v2.4.0",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/constant_time_encoding.git",
-                "reference": "f34c2b11eb9d2c9318e13540a1dbc2a3afbd939c"
+                "reference": "9229e15f2e6ba772f0c55dd6986c563b937170a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/constant_time_encoding/zipball/f34c2b11eb9d2c9318e13540a1dbc2a3afbd939c",
-                "reference": "f34c2b11eb9d2c9318e13540a1dbc2a3afbd939c",
+                "url": "https://api.github.com/repos/paragonie/constant_time_encoding/zipball/9229e15f2e6ba772f0c55dd6986c563b937170a8",
+                "reference": "9229e15f2e6ba772f0c55dd6986c563b937170a8",
                 "shasum": ""
             },
             "require": {
@@ -17823,7 +17821,7 @@
                 "issues": "https://github.com/paragonie/constant_time_encoding/issues",
                 "source": "https://github.com/paragonie/constant_time_encoding"
             },
-            "time": "2020-12-06T15:14:20+00:00"
+            "time": "2022-01-17T05:32:27+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -23458,16 +23456,16 @@
         },
         {
             "name": "codeception/phpunit-wrapper",
-            "version": "9.0.6",
+            "version": "9.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/phpunit-wrapper.git",
-                "reference": "b0c06abb3181eedca690170f7ed0fd26a70bfacc"
+                "reference": "7d6b1a5ea4ed28d010e5d36b993db813eb49710b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/phpunit-wrapper/zipball/b0c06abb3181eedca690170f7ed0fd26a70bfacc",
-                "reference": "b0c06abb3181eedca690170f7ed0fd26a70bfacc",
+                "url": "https://api.github.com/repos/Codeception/phpunit-wrapper/zipball/7d6b1a5ea4ed28d010e5d36b993db813eb49710b",
+                "reference": "7d6b1a5ea4ed28d010e5d36b993db813eb49710b",
                 "shasum": ""
             },
             "require": {
@@ -23501,9 +23499,9 @@
             "description": "PHPUnit classes used by Codeception",
             "support": {
                 "issues": "https://github.com/Codeception/phpunit-wrapper/issues",
-                "source": "https://github.com/Codeception/phpunit-wrapper/tree/9.0.6"
+                "source": "https://github.com/Codeception/phpunit-wrapper/tree/9.0.7"
             },
-            "time": "2020-12-28T13:59:47+00:00"
+            "time": "2022-01-26T14:43:10+00:00"
         },
         {
             "name": "codeception/stub",
@@ -23862,32 +23860,28 @@
         },
         {
             "name": "doctrine/lexer",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "e864bbf5904cb8f5bb334f99209b48018522f042"
+                "reference": "9c50f840f257bbb941e6f4a0e94ccf5db5c3f76c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/e864bbf5904cb8f5bb334f99209b48018522f042",
-                "reference": "e864bbf5904cb8f5bb334f99209b48018522f042",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/9c50f840f257bbb941e6f4a0e94ccf5db5c3f76c",
+                "reference": "9c50f840f257bbb941e6f4a0e94ccf5db5c3f76c",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2 || ^8.0"
+                "php": "^7.1 || ^8.0"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^6.0",
-                "phpstan/phpstan": "^0.11.8",
-                "phpunit/phpunit": "^8.2"
+                "doctrine/coding-standard": "^9.0",
+                "phpstan/phpstan": "1.3",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
+                "vimeo/psalm": "^4.11"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Doctrine\\Common\\Lexer\\": "lib/Doctrine/Common/Lexer"
@@ -23922,7 +23916,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/lexer/issues",
-                "source": "https://github.com/doctrine/lexer/tree/1.2.1"
+                "source": "https://github.com/doctrine/lexer/tree/1.2.2"
             },
             "funding": [
                 {
@@ -23938,7 +23932,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-25T17:44:05+00:00"
+            "time": "2022-01-12T08:27:12+00:00"
         },
         {
             "name": "friendsofphp/php-cs-fixer",
@@ -25044,16 +25038,16 @@
         },
         {
             "name": "mustache/mustache",
-            "version": "v2.14.0",
+            "version": "v2.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/mustache.php.git",
-                "reference": "4e2724dd40ae9499a55e7db7df82665be0ab7e34"
+                "reference": "579ffa5c96e1d292c060b3dd62811ff01ad8c24e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/4e2724dd40ae9499a55e7db7df82665be0ab7e34",
-                "reference": "4e2724dd40ae9499a55e7db7df82665be0ab7e34",
+                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/579ffa5c96e1d292c060b3dd62811ff01ad8c24e",
+                "reference": "579ffa5c96e1d292c060b3dd62811ff01ad8c24e",
                 "shasum": ""
             },
             "require": {
@@ -25088,9 +25082,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/mustache.php/issues",
-                "source": "https://github.com/bobthecow/mustache.php/tree/v2.14.0"
+                "source": "https://github.com/bobthecow/mustache.php/tree/v2.14.1"
             },
-            "time": "2021-12-14T14:42:17+00:00"
+            "time": "2022-01-21T06:08:36+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -27865,7 +27859,26 @@
     "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-bcmath": "*",
+        "ext-apcu": "*",
+        "ext-amqp": "*",
+        "ext-xdebug": "*",
+        "ext-curl": "*",
+        "ext-soap": "*",
+        "ext-mbstring": "*",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
+        "ext-mysqlnd": "*",
+        "ext-xml": "*",
+        "ext-xsl": "*",
+        "ext-gd": "*",
+        "ext-intl": "*",
+        "ext-iconv": "*",
+        "ext-ftp": "*",
+        "ext-zip": "*",
+        "ext-zend-opcache": "*"
+    },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "1.1.0"
 }

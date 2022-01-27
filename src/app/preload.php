@@ -33,19 +33,23 @@ function preload($preload, array $ignore = [], string $pattern = "/\.php$/")
 
 set_include_path(get_include_path() . PATH_SEPARATOR . realpath(__DIR__));
 
-preload(
-    [
+$preload = [
+    dirname(__DIR__) . '/vendor/autoload.php',
+    dirname(__DIR__) . '/vendor/composer/include_paths.php',
+    dirname(__DIR__) . '/vendor/composer/autoload_static.php',
+    dirname(__DIR__) . '/vendor/composer/autoload_real.php',
+    dirname(__DIR__) . '/vendor/composer/autoload_psr4.php',
+    dirname(__DIR__) . '/vendor/composer/autoload_namespaces.php',
+    dirname(__DIR__) . '/vendor/composer/autoload_files.php',
+    dirname(__DIR__) . '/vendor/composer/autoload_classmap.php',
+    __DIR__ . '/etc/config.php',
+    __DIR__ . '/etc/env.php',
+];
+
+if (getenv('MAGE_MODE') == 'production') {
+    $preload[] = [
         dirname(__DIR__) . '/generated/metadata',
-        dirname(__DIR__) . '/vendor/autoload.php',
-        dirname(__DIR__) . '/vendor/composer/include_paths.php',
-        dirname(__DIR__) . '/vendor/composer/autoload_static.php',
-        dirname(__DIR__) . '/vendor/composer/autoload_real.php',
-        dirname(__DIR__) . '/vendor/composer/autoload_psr4.php',
-        dirname(__DIR__) . '/vendor/composer/autoload_namespaces.php',
-        dirname(__DIR__) . '/vendor/composer/autoload_files.php',
-        dirname(__DIR__) . '/vendor/composer/autoload_classmap.php',
-        __DIR__ . '/etc/config.php',
-        __DIR__ . '/etc/env.php',
-    ],
-    []
-);
+    ];
+}
+
+preload($preload, []);

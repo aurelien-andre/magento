@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Magento" basedir="/var/www/html">
+    <property name="bin.magento" value="${base_dir}/bin/magento"/>
+    <target name="validate-magento-properties" description="Ensure magento properties are defined">
+        <if>
+            <not>
+                <isset property="magento2.version"/>
+            </not>
+            <then>
+                <fail>magento.version is not specified</fail>
+            </then>
+        </if>
+        <echo message="Done" />
+    </target>
+    <target name="magento-setup-upgrade"
+            description="magento setup update">
+        <exec command="${bin.magento} setup:upgrade"
+              passthru="true"
+              checkreturn="true"/>
+    </target>
+    <target name="magento-setup-di-compile"
+            description="magento setup di compile">
+        <exec command="${bin.magento} setup:di:compile"
+              passthru="true"
+              checkreturn="true"/>
+    </target>
+    <target name="magento-cache-clean"
+            description="magento cache clean">
+        <exec command="${bin.magento} cache:clean"
+              passthru="true"
+              checkreturn="true"/>
+    </target>
+    <target name="magento-cache-flush"
+            description="magento cache flush">
+        <exec command="php ${bin.magento} cache:flush"
+              passthru="true"
+              checkreturn="true" />
+    </target>
+    <target name="magento-initialize"
+            depends="validate-magento-properties, magento-setup-upgrade, magento-setup-di-compile, magento-cache-clean, magento-cache-flush"
+            description="Initialize Magento">
+        <echo message="Done" />
+    </target>
+</project>

@@ -96,14 +96,6 @@ services:
     depends_on:
       - traefik
 
-  composer:
-    image: aurelienandre/magento-composer:latest
-    command: install --prefer-dist --no-progress --no-interaction
-    labels:
-      - traefik.enable=false
-    volumes:
-      - ./src:/app:rw,delegated
-
   magento:
     image: aurelienandre/magento-lts:latest
     env_file:
@@ -130,3 +122,4 @@ services:
     volumes:
       - ./src:/var/www/html:rw,delegated
       - ./data/media:/var/www/html/pub/media:rw,delegated
+      - ./deploy:/deploy:rw,delegated

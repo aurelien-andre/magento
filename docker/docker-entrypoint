@@ -36,6 +36,16 @@ if [ "$1" = 'supervisord' ]; then
 
   done
 
+  if [ "$MAGE_MODE" != 'production' ] && [ -n "$(ls -A /var/www/html/vendor/bin/* 2>/dev/null)" ]; then
+
+    for BINARY in /var/www/html/vendor/bin/*; do
+
+      ln -sf "$BINARY" "/usr/bin/$(basename -- $BINARY)"
+
+    done
+
+  fi
+
   if [ "$MAGE_INSTALL" == "true" ]; then
 
     bin/magento setup:upgrade

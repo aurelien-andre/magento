@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="QA" default="build" basedir="/var/www/html">
+    <property name="base_dir" value="${project.basedir}"/>
+    <property file="/deploy/build.properties"/>
+    <import file="/deploy/import/build-composer.xml"/>
+    <import file="/deploy/import/build-magento.xml"/>
+    <import file="/deploy/import/build-test.xml"/>
+    <target name="build" depends="composer-install, magento-initialize, test-all" description="Build package local">
+        <echo message="Done" />
+    </target>
+</project>
