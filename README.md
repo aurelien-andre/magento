@@ -39,6 +39,7 @@ Copy rules
 Composer
 
 ```shell
+# Download last version of composer
 wget -q https://getcomposer.org/download/latest-stable/composer.phar; \
 mv composer.phar docker/bin-composer
 ```
@@ -46,6 +47,7 @@ mv composer.phar docker/bin-composer
 Phing
 
 ```shell
+# Download last version of phing
 wget -q https://www.phing.info/get/phing-latest.phar; \
 mv phing-latest.phar docker/bin-phing
 ```
@@ -53,8 +55,21 @@ mv phing-latest.phar docker/bin-phing
 MailHog
 
 ```shell
+# Download last version of mhsendmail for mailhog
 wget -q https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64; \
 mv mhsendmail_linux_amd64 docker/bin-mhsendmail
+```
+
+Start all
+
+```shell
+# Start containers
+docker-compose up
+```
+
+```shell
+# Run deploy local
+docker-compose exec -u rootless magento bin-phing -f /deploy/build-local.xml
 ```
 
 ## PHP
