@@ -63,6 +63,11 @@ mv mhsendmail_linux_amd64 docker/bin-mhsendmail
 Start all
 
 ```shell
+# Build image
+docker build . -t aurelienandre/magento-lts:latest
+```
+
+```shell
 # Start containers
 docker-compose up
 ```
