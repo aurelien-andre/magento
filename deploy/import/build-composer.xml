@@ -39,6 +39,9 @@
                     </filterchain>
                 </copy>
             </then>
+            <else>
+                <echo message="Done"/>
+            </else>
         </if>
     </target>
     <target name="validate-composer"
