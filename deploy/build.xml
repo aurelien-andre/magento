@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="QA" default="build" basedir="/var/www/html">
-    <property file="/deploy/build.properties"/>
     <property name="base_dir" value="${project.basedir}"/>
-    <import file="/deploy/build-composer.xml"/>
-    <target name="build" depends="composer-install-optimized" description="Build package"/>
+    <property file="/deploy/build.properties"/>
+    <import file="/deploy/import/build-composer.xml"/>
+    <import file="/deploy/import/build-magento.xml"/>
+    <import file="/deploy/import/build-test.xml"/>
+    <target name="build-compile"
+            depends="composer-install, test-all"
+            description="Build compile"/>
+    <target name="build-optimized"
+            depends="composer-install-optimized"
+            description="Build optimized"/>
+    <target name="build"
+            depends="build-compile, build-optimized"
+            description="Build package local"/>
 </project>

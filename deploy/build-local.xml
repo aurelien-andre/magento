@@ -5,7 +5,5 @@
     <import file="/deploy/import/build-composer.xml"/>
     <import file="/deploy/import/build-magento.xml"/>
     <import file="/deploy/import/build-test.xml"/>
-    <target name="build" depends="composer-install, magento-initialize, test-all" description="Build package local">
-        <echo message="Done" />
-    </target>
+    <target name="build" depends="composer-install, magento-initialize, test-all" description="Build package local"/>
 </project>
