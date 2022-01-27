@@ -72,11 +72,6 @@ docker build . -t aurelienandre/magento-lts:latest
 docker-compose up
 ```
 
-```shell
-# Run deploy local
-docker-compose exec -u rootless magento bin-phing -f /deploy/build-local.xml
-```
-
 ## PHP
 
 ### Configuration

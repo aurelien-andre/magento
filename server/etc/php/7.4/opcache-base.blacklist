@@ -1,3 +1,2 @@
 /var/www/html/app/etc/*
-/var/www/html/bin/*
-/var/www/html/pub/*
+/var/www/html/generated/metadata/*
