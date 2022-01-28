@@ -36,34 +36,55 @@ Copy rules
 127.0.0.1       www.magento.lan
 ```
 
-Composer
+Install composer
 
 ```shell
-# Download last version of composer
 # @see https://getcomposer.org/download/
 wget -q https://getcomposer.org/download/latest-stable/composer.phar; \
 mv composer.phar docker/bin-composer
 ```
 
-MailHog
+Install mailHog (local)
 
 ```shell
-# Download last version of mhsendmail for mailhog
 # @see https://github.com/mailhog/mhsendmail/releases
 wget -q https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64; \
 mv mhsendmail_linux_amd64 docker/bin-mhsendmail
 ```
 
-Start all
+Update composer auth.json
 
 ```shell
-# Build image
+cp auth.sample.json src/auth.json # Change the entries into src/auth.json
+```
+
+Build image
+
+```shell
 docker build . -t aurelienandre/magento-lts:latest
 ```
 
+Start containers
+
 ```shell
-# Start containers
 docker-compose up
+```
+
+Install composer packages
+
+```shell
+docker-compose exec magento bin-composer install --prefer-dist --no-progress --no-interaction 
+```
+
+Initialize magento
+
+```shell
+rm -rf generated/* \
+&& docker-compose exec magento bin/magento app:config:import \
+&& docker-compose exec magento bin/magento setup:upgrade \
+&& docker-compose exec magento bin/magento setup:di:compile \
+&& docker-compose exec magento bin/magento cache:clean \
+&& docker-compose exec magento bin/magento indexer:reindex
 ```
 
 ## PHP
