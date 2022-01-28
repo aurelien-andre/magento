@@ -75,7 +75,7 @@ docker-compose up
 Initialize magento
 
 ```shell
-rm -rf generated/* \
+rm -rf src/generated/* \
 && docker-compose exec magento bin/magento app:config:import \
 && docker-compose exec magento bin/magento setup:upgrade \
 && docker-compose exec magento bin/magento setup:di:compile \
