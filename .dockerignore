@@ -1,7 +1,3 @@
-/data
-/src/var
-/src/generated
-/src/vendor
 /.git
 /.gitignore
 /.dockerignore.prod
@@ -12,3 +8,19 @@
 /docker-compose.yml
 /Dockerfile
 /README.md
+/data
+/src/var
+/src/node_modules
+/src/generated
+/src/vendor
+/src/setup
+/src/dev
+/src/.editorconfig
+/src/.gitignore
+/src/.php_cs
+/src/grunt-config.json
+/src/Gruntfile.js
+/src/grunt-config.json
+/src/package.json
+/src/package-lock.json
+/src/phpunit.xml
