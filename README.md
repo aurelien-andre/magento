@@ -75,7 +75,10 @@ docker-compose up
 Install composer packages
 
 ```shell
-docker-compose exec magento bin-composer install --prefer-dist --no-progress --no-interaction 
+docker-compose exec magento bin-composer install \
+--prefer-dist \
+--no-progress \
+--no-interaction 
 ```
 
 Initialize magento
