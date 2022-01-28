@@ -84,7 +84,7 @@ rm -rf src/generated/* \
 && docker-compose exec magento bin/magento cache:flush
 ```
 
-Hosts
+Website
 
 Identification : admin @  admin123
 
