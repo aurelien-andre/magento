@@ -10,3 +10,4 @@
 /src/auth.json
 /docker/*
 !/docker/docker-*
+.php_cs.cache
