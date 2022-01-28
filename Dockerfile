@@ -1,5 +1,8 @@
 FROM debian:bullseye-slim
 
+ARG UID=1000
+ARG GID=1000
+
 ENV \
 COMPOSER_ALLOW_SUPERUSER='0' \
 COMPOSER_ALLOW_XDEBUG='0' \
@@ -80,11 +83,11 @@ curl \
 unzip
 
 RUN set -eux; \
-adduser -h /home/rootless -g 'rootless' -D -u 1000 rootless; \
-echo 'rootless:1000:1000' >> /etc/subuid; \
-echo 'rootless:1000:1000' >> /etc/subgid; \
-echo 'rootless:rootless:1000:1000:/root:/bin' >> /etc/passwd; \
-echo 'rootless::1000:rootless' >> /etc/group
+adduser -h /home/rootless -g "rootless" -D -u ${UID} rootless; \
+echo "rootless:${UID}:${GID}" >> /etc/subuid; \
+echo "rootless:${UID}:${GID}" >> /etc/subgid; \
+echo "rootless:rootless:${UID}:${GID}:/root:/bin" >> /etc/passwd; \
+echo "rootless::${GID}:rootless" >> /etc/group
 
 RUN apt-get update \
 &&  wget -q https://packages.sury.org/php/apt.gpg -O- | apt-key add - \

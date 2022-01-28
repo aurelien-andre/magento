@@ -61,7 +61,9 @@ cp auth.sample.json src/auth.json # Change the entries into src/auth.json
 Build image
 
 ```shell
-docker build . -t aurelienandre/magento-lts:latest
+docker build . -t aurelienandre/magento-lts:latest \
+--build-arg UID=$(id -u) \
+--build-arg GID=$(id -g)
 ```
 
 Start containers
@@ -83,8 +85,9 @@ rm -rf generated/* \
 && docker-compose exec magento bin/magento app:config:import \
 && docker-compose exec magento bin/magento setup:upgrade \
 && docker-compose exec magento bin/magento setup:di:compile \
+&& docker-compose exec magento bin/magento indexer:reindex \
 && docker-compose exec magento bin/magento cache:clean \
-&& docker-compose exec magento bin/magento indexer:reindex
+&& docker-compose exec magento bin/magento cache:flush
 ```
 
 ## PHP
