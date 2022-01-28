@@ -84,6 +84,18 @@ rm -rf src/generated/* \
 && docker-compose exec magento bin/magento cache:flush
 ```
 
+Hosts
+
+Identification : admin @  admin123
+
+| Host                         |
+|------------------------------|
+| http://www.traefik.lan       |
+| http://www.phpmyadmin.lan    |
+| http://www.rabbitmq.lan      |
+| http://www.elasticsearch.lan |
+| http://www.magento.lan       |
+
 ## PHP
 
 ### Configuration
