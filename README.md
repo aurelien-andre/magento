@@ -107,12 +107,13 @@ supervisorctl help
 ```
 
 ```shell
-supervisorctl
+supervisorctl 
 
-# crontab:crontab-default_00       RUNNING   pid 57, uptime 0:00:13
-# crontab:crontab-index_00       RUNNING   pid 8, uptime 0:03:25
-# server:server-fpm_00            RUNNING   pid 11, uptime 0:03:25
-# server:server-nginx_00          RUNNING   pid 9, uptime 0:03:25
+# boot                             RUNNING   pid 92036, uptime 0:00:24
+# crontab:crontab-default_00       RUNNING   pid 92039, uptime 0:00:24
+# crontab:crontab-index_00         RUNNING   pid 90682, uptime 0:09:59
+# server:server-fpm_00             RUNNING   pid 1952, uptime 10:32:06
+# server:server-nginx_00           RUNNING   pid 1951, uptime 10:32:06
 
 ```
 
