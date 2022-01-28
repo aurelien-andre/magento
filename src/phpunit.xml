@@ -32,7 +32,7 @@
     <listeners>
         <listener class="Yandex\Allure\PhpUnit\AllurePhpUnit">
             <arguments>
-                <string>../var/allure-results</string> <!-- XML files output directory -->
+                <string>./var/allure-results</string> <!-- XML files output directory -->
                 <boolean>true</boolean> <!-- Whether to delete previous results on rerun -->
                 <array> <!-- A list of custom annotations to ignore (optional) -->
                     <element key="codingStandardsIgnoreStart">
