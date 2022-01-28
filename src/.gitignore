@@ -29,6 +29,7 @@ atlassian*
 /node_modules
 /.grunt
 /.php_cs.cache
+/package-lock.json
 /pub/media/*
 !/pub/media/.gitignore
 /pub/static/*
